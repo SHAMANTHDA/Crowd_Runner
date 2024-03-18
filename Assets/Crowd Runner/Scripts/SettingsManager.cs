@@ -18,6 +18,12 @@ public class SettingsManager : MonoBehaviour
     private bool soundsState = true;
     private bool hapticState = true;
 
+    private void Awake()
+    {
+        soundsState = PlayerPrefs.GetInt("sounds", 1) == 1;
+        hapticState = PlayerPrefs.GetInt("haptics", 1) == 1;
+    }
+
     private void Start()
     {
         SetUp();
@@ -60,6 +66,8 @@ public class SettingsManager : MonoBehaviour
         }
 
         soundsState = !soundsState;
+
+        PlayerPrefs.SetInt("sounds", soundsState ? 1 : 0);
     }
 
     private void EnableSounds()
@@ -90,6 +98,8 @@ public class SettingsManager : MonoBehaviour
         }
 
         hapticState = !hapticState;
+
+        PlayerPrefs.SetInt("haptics", hapticState ? 1 : 0);
     }
 
     private void DisableHaptic()
