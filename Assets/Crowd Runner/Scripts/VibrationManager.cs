@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class VibrationManager : MonoBehaviour
 {
+
+    [Header("Settings")]
+    private bool haptics;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,19 @@ public class VibrationManager : MonoBehaviour
 
     private void Vibrate()
     {
-        Taptic.Light();
+        if (haptics)
+        {
+            Taptic.Light();
+        }
+    }
+
+    internal void DisableHaptic()
+    {
+        haptics = false;
+    }
+
+    internal void EnableHaptic()
+    {
+        haptics = true;
     }
 }
