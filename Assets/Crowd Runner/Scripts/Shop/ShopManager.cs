@@ -102,7 +102,7 @@ public class ShopManager : MonoBehaviour
         UpdatePurchaseButton();
     }
 
-    private void UpdatePurchaseButton()
+    public void UpdatePurchaseButton()
     {
         if (DataManager.instance.GetCoins() < skinPrice)
         {
