@@ -6,13 +6,25 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
     [Header("Elements")]
+    [SerializeField] private Button purchaseButton;
     [SerializeField] private SkinButton[] skinButtons;
 
     [Header("Skins")]
     [SerializeField] private Sprite[] skins;
+
+    [Header("Pricing")]
+    [SerializeField] private int skinPrice;
+    [SerializeField] private Text priceText;
+
+    private void Awake()
+    {
+        priceText.text = skinPrice.ToString();
+    }
     private void Start()
     {
         ConfigureButtons();
+
+        UpdatePurchaseButton();
     }
 
     private void Update()
@@ -84,5 +96,21 @@ public class ShopManager : MonoBehaviour
 
         UnlockSkin(randomSkinButton);
         SelectSkin(randomSkinButton.transform.GetSiblingIndex());
+
+        DataManager.instance.UseCoins(skinPrice);
+
+        UpdatePurchaseButton();
+    }
+
+    private void UpdatePurchaseButton()
+    {
+        if (DataManager.instance.GetCoins() < skinPrice)
+        {
+            purchaseButton.interactable = false;
+        }
+        else
+        {
+            purchaseButton.interactable = true;
+        }
     }
 }

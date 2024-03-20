@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
+        AddCoins(5);
         UpdateCoinsText();
     }
 
@@ -38,13 +40,24 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void AddCoins(int Amount)
+    public void AddCoins(int amount)
     {
-        coins += Amount;
+        coins += amount;
 
         UpdateCoinsText();
 
         PlayerPrefs.SetInt("coins", coins);
     }
+    internal void UseCoins(int amount)
+    {
+        coins -= amount;
 
+        UpdateCoinsText();
+
+        PlayerPrefs.SetInt("coins", coins);
+    }
+    public int GetCoins()
+    {
+        return coins;
+    }
 }
