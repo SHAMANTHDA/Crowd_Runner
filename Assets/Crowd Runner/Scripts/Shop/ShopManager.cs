@@ -26,6 +26,8 @@ public class ShopManager : MonoBehaviour
     }
     IEnumerator Start()
     {
+        RewardedAdsButton.onRewardedAdButton += RewardPlayer;
+
         ConfigureButtons();
         UpdatePurchaseButton();
 
@@ -34,12 +36,23 @@ public class ShopManager : MonoBehaviour
         SelectSkin(GetLastSelectedSkin());
     }
 
+    private void OnDestroy()
+    {
+        RewardedAdsButton.onRewardedAdButton -= RewardPlayer;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             UnlockSkin(UnityEngine.Random.Range(0, skinButtons.Length));
         }
+    }
+
+    private void RewardPlayer()
+    {
+        DataManager.instance.AddCoins(200);
+        UpdatePurchaseButton();
     }
     private void ConfigureButtons()
     {
