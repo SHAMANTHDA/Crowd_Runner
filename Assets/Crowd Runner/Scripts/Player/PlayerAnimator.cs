@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-
     [Header(" Elements ")]
     [SerializeField] private Transform runnersParent;
 
@@ -25,7 +24,7 @@ public class PlayerAnimator : MonoBehaviour
         for (int i = 0; i < runnersParent.childCount; i++)
         {
             Transform runner = runnersParent.GetChild(i);
-            Animator runnerAnimator = runner.GetComponent<Animator>();
+            Animator runnerAnimator = runner.GetComponent<Runner>().GetAnimator();
 
             runnerAnimator.Play("Run");
         }
@@ -36,7 +35,7 @@ public class PlayerAnimator : MonoBehaviour
         for (int i = 0; i < runnersParent.childCount; i++)
         {
             Transform runner = runnersParent.GetChild(i);
-            Animator runnerAnimator = runner.GetComponent<Animator>();
+            Animator runnerAnimator = runner.GetComponent<Runner>().GetAnimator();
 
             runnerAnimator.Play("Idle");
         }

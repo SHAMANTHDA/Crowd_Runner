@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
+    [Header("Elements")]
+    [SerializeField] private Animator animator;
+
     [Header(" Settings ")]
     private bool isTarget;
 
@@ -15,5 +18,10 @@ public class Runner : MonoBehaviour
     public bool IsTarget()
     {
         return isTarget;
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
     }
 }
