@@ -8,6 +8,15 @@ public class PlayerSelector : MonoBehaviour
     [SerializeField] private Transform runnersParent;
     [SerializeField] private RunnerSelector runnerSelectorPrefab;
 
+    private void Start()
+    {
+        ShopManager.onSkinSelected += SelectSkin;
+    }
+
+    private void OnDestroy()
+    {
+        ShopManager.onSkinSelected -= SelectSkin;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
