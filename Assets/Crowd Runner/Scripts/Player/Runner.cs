@@ -23,5 +23,8 @@ public class Runner : MonoBehaviour
     public Animator GetAnimator()
     {
         return animator;
+    }public void SetAnimator(Animator animator)
+    {
+        this.animator = animator;
     }
 }
