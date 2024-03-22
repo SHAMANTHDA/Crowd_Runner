@@ -13,6 +13,8 @@ public class PlayerDetection : MonoBehaviour
 
     [Header(" Events ")]
     public static Action onDoorsHit;
+    public static Action onCoinsHit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,9 +64,12 @@ public class PlayerDetection : MonoBehaviour
 
             else if (detectedColliders[i].tag == "Coin")
             {
+                onCoinsHit?.Invoke();
+
                 Destroy(detectedColliders[i].gameObject);
 
                 DataManager.instance.AddCoins(1);
+
             }
         }
     }

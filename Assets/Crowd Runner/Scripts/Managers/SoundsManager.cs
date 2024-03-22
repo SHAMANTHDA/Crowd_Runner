@@ -11,6 +11,7 @@ public class SoundsManager : MonoBehaviour
     [SerializeField] private AudioSource runnerDieSound;
     [SerializeField] private AudioSource levelCompleteSound;
     [SerializeField] private AudioSource gameoverSound;
+    [SerializeField] private AudioSource coinSound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class SoundsManager : MonoBehaviour
         GameManager.onGameStateChanged += GameStateChangedCallback;
 
         Enemy.onRunnerDied += PlayRunnerDieSound;
+
+        PlayerDetection.onCoinsHit += PlayCoinSound;
     }
 
     private void OnDestroy()
@@ -29,6 +32,8 @@ public class SoundsManager : MonoBehaviour
         GameManager.onGameStateChanged -= GameStateChangedCallback;
 
         Enemy.onRunnerDied -= PlayRunnerDieSound;
+
+        PlayerDetection.onCoinsHit -= PlayCoinSound;
     }
 
     // Update is called once per frame
@@ -52,6 +57,7 @@ public class SoundsManager : MonoBehaviour
         levelCompleteSound.volume = 0;
         gameoverSound.volume = 0;
         buttonSound.volume = 0;
+        coinSound.volume = 0;
     }
 
     internal void EnableSounds()
@@ -61,6 +67,7 @@ public class SoundsManager : MonoBehaviour
         levelCompleteSound.volume = 1;
         gameoverSound.volume = 1;
         buttonSound.volume = 1;
+        coinSound.volume = 1;
     }
 
     private void PlayDoorHitSound()
@@ -71,5 +78,10 @@ public class SoundsManager : MonoBehaviour
     private void PlayRunnerDieSound()
     {
         runnerDieSound.Play();
+    }
+
+    private void PlayCoinSound()
+    {
+        coinSound.Play();
     }
 }
