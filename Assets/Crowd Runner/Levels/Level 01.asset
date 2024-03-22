@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Level 01
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 9206812218148164743, guid: d38de101dba64dc449a8a0fb8fd2df16, type: 3}
-  - {fileID: 9206812218148164743, guid: 35e7ab44d50cd974284929225c03a119, type: 3}
-  - {fileID: 8052102723347043478, guid: 2046685ef145ef746b075d6bed675e6c, type: 3}
-  - {fileID: 9206812218148164743, guid: 35e7ab44d50cd974284929225c03a119, type: 3}
+  - {fileID: 4298949002023365770, guid: f8c039bfce4f65d449d60ae834cdb973, type: 3}
+  - {fileID: 8052102723347043478, guid: bf62f9bef3ecc854ca6a4bc6d6fe5f99, type: 3}
   - {fileID: 8052102723347043478, guid: 0b16377c60f1dd849ad505d9f0191ae5, type: 3}

@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c50ac1ea859fc404d918d3cb3a398cc2, type: 3}
-  m_Name: Level 02
+  m_Name: Level 06
   m_EditorClassIdentifier: 
   chunks:
   - {fileID: 4298949002023365770, guid: f8c039bfce4f65d449d60ae834cdb973, type: 3}
+  - {fileID: 9206812218148164743, guid: 97209ecaf58245644acb683cc85e4698, type: 3}
+  - {fileID: 8052102723347043478, guid: 58e19da91a77fa643929b1dc023b1dac, type: 3}
   - {fileID: 8052102723347043478, guid: bd85265ad339d6944b19ae55c6abf86f, type: 3}
   - {fileID: 8052102723347043478, guid: 0b16377c60f1dd849ad505d9f0191ae5, type: 3}
