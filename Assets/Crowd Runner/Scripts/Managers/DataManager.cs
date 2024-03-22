@@ -28,7 +28,7 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
-        AddCoins(5);
+        AddCoins(0);
         UpdateCoinsText();
     }
 

@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject levelCompletePanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject settingsButton;
 
     [SerializeField] private Slider progressBar;
     [SerializeField] private Text levelText;
@@ -103,11 +104,13 @@ public class UIManager : MonoBehaviour
     {
         shopPanel.SetActive(true);
         shopManager.UpdatePurchaseButton();
+        settingsButton.SetActive(false);
     }
 
     public void HideShop()
     {
         shopPanel.SetActive(false);
+        settingsButton.SetActive(true);
     }
 
 }
