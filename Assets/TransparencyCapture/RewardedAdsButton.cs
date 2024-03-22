@@ -10,8 +10,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     string _adUnitId = null; // This will remain null for unsupported platforms
 
-    [Header("Events")]
-    public static Action onRewardedAdButton;
+
+    [Header(" Events ")]
+    public static Action onRewardedAdRewarded;
 
     void Awake()
     {
@@ -22,19 +23,17 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         _adUnitId = _androidAdUnitId;
 #endif
 
-        // Disable the button until the ad is ready to show:
+        //Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;
     }
 
     private void Start()
     {
-        if (FindObjectsOfType<AdsInitializer>().IsLoaded())
-        {
+        if (FindObjectOfType<AdsInitializer>().IsLoaded())
             LoadAd();
-        }
     }
 
-    // Call this public method when you want to get an ad ready to show.
+    // Load content to the Ad Unit:
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
@@ -72,9 +71,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
+            onRewardedAdRewarded?.Invoke();
 
-            onRewardedAdButton?.Invoke();
-
+            // Load another ad:
             Advertisement.Load(_adUnitId, this);
         }
     }

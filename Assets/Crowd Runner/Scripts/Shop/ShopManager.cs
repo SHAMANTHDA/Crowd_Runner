@@ -26,7 +26,7 @@ public class ShopManager : MonoBehaviour
     }
     IEnumerator Start()
     {
-        RewardedAdsButton.onRewardedAdButton += RewardPlayer;
+        RewardedAdsButton.onRewardedAdRewarded += RewardPlayer;
 
         ConfigureButtons();
         UpdatePurchaseButton();
@@ -38,7 +38,7 @@ public class ShopManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        RewardedAdsButton.onRewardedAdButton -= RewardPlayer;
+        RewardedAdsButton.onRewardedAdRewarded -= RewardPlayer;
     }
 
     private void Update()
