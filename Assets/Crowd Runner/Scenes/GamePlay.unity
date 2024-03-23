@@ -1277,7 +1277,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 153844aba3418244a8e76d9c713760f8, type: 3}
   - {fileID: 21300000, guid: 6efad80e88742de44b64f6de5b025e22, type: 3}
   - {fileID: 21300000, guid: b175addbe830c8e40a13c6273b4e30ef, type: 3}
-  skinPrice: 50
+  skinPrice: 250
   priceText: {fileID: 705959495}
 --- !u!1 &253220905
 GameObject:
@@ -3069,6 +3069,7 @@ GameObject:
   - component: {fileID: 729119798}
   - component: {fileID: 729119797}
   - component: {fileID: 729119799}
+  - component: {fileID: 729119800}
   m_Layer: 0
   m_Name: Unity Ads Manager
   m_TagString: Untagged
@@ -3093,6 +3094,7 @@ MonoBehaviour:
   _testMode: 1
   interstitialAds: {fileID: 729119799}
   rewardedAdsButton: {fileID: 1235819118}
+  isLoaded: 0
 --- !u!4 &729119798
 Transform:
   m_ObjectHideFlags: 0
@@ -3122,6 +3124,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidAdUnitId: Interstitial_Android
   _iOsAdUnitId: Interstitial_iOS
+--- !u!114 &729119800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729119796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be68c34471a3f7448229b7e8ceba97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bannerPosition: 4
+  _androidAdUnitId: Banner_Android
+  _iOSAdUnitId: Banner_iOS
 --- !u!1 &743747876
 GameObject:
   m_ObjectHideFlags: 0

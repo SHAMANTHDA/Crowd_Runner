@@ -55,6 +55,8 @@ public class BannerAds : MonoBehaviour
     {
         Debug.Log($"Banner Error: {message}");
         // Optionally execute additional code, such as attempting to load another ad.
+
+        LoadBanner();
     }
 
     // Implement a method to call when the Show Banner button is clicked:

@@ -26,6 +26,14 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         _showAdButton.interactable = false;
     }
 
+    private void Start()
+    {
+        if (FindObjectOfType<AdsInitializer>().IsLoaded())
+        {
+            LoadAd();
+        }
+    }
+
     // Call this public method when you want to get an ad ready to show.
     public void LoadAd()
     {
