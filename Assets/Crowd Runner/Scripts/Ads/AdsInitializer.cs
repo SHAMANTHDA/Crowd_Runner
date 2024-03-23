@@ -8,6 +8,9 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     [SerializeField] bool _testMode = true;
     private string _gameId;
 
+    [Header("Elements")]
+    [SerializeField] private InterstitialAds interstitialAds;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -33,6 +36,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
+        interstitialAds.LoadAd();
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
