@@ -10,6 +10,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 
     [Header("Elements")]
     [SerializeField] private InterstitialAds interstitialAds;
+    [SerializeField] private RewardedAdsButton rewardedAdsButton;
 
     void Awake()
     {
@@ -37,6 +38,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     {
         Debug.Log("Unity Ads initialization complete.");
         interstitialAds.LoadAd();
+        rewardedAdsButton.LoadAd();
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
