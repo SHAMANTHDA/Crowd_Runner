@@ -10,6 +10,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     string _adUnitId;
     bool adLoaded;
 
+    private int counter;
     void Awake()
     {
         if (instance == null)
@@ -38,6 +39,16 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     // Show the loaded content in the Ad Unit:
     public void ShowAd()
     {
+        counter++;
+
+        if (counter >= 3)
+        {
+            counter = 0;
+        }
+        else
+        {
+            return;
+        }
         if (!adLoaded)
         {
             return;
